@@ -1,0 +1,15 @@
+README.md
+setup.py
+interpolML/__init__.py
+interpolML/interpol.py
+interpolML/interpole.py
+interpolML/test.py
+interpolML.egg-info/PKG-INFO
+interpolML.egg-info/SOURCES.txt
+interpolML.egg-info/dependency_links.txt
+interpolML.egg-info/top_level.txt
+interpolML.egg-info/zip-safe
+interpolML/model/__init__.py
+interpolML/model/model.py
+interpolML/model/neural_prophet.py
+interpolML/model/orbit.py
