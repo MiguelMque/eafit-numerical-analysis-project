@@ -17,7 +17,5 @@ class Plotter:
         self.predicted["prediction_5"] = self.predicted.prediction - ci
         self.predicted["prediction_95"] = self.predicted.prediction + ci
 
-        print(self.predicted)
-
         plot_predicted_data(self.train, self.predicted, self.date_col, self.y_col, test_actual_df=self.test,
                             prediction_percentiles=[5, 95])

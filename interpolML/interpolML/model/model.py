@@ -1,7 +1,5 @@
 from typing import Any
-import numpy as np
-import pandas as pd
-
+from copy import deepcopy
 
 class Model:
 
@@ -20,27 +18,27 @@ class Model:
     def fit(self, train_dataset):
 
         "Performs model training with standard settings"
-        self.train = train_dataset
+        self.train = deepcopy(train_dataset)
 
         if self.name == "orbit":
 
-            self.model.fit(train_dataset)
+            self.model.fit(self.train)
 
         elif self.name == "nprophet":
-            self.model.fit(train_dataset, validate_each_epoch=True,
+            self.model.fit(self.train, validate_each_epoch=True,
                            valid_p=0.2, freq=self.freq,
                            plot_live_loss=True, epochs=10)
 
     def predict(self, dataset: Any):
         "Performs prediction"
 
-        self.test = dataset
+        self.test = deepcopy(dataset)
 
         if self.name == "orbit":
-            prediction = self.model.predict(dataset)
+            prediction = self.model.predict(self.test)
         elif self.name == "nprophet":
 
-            future = self.model.make_future_dataframe(self.train, periods=len(dataset))
+            future = self.model.make_future_dataframe(self.train, periods=len(self.test))
             prediction = self.model.predict(future).rename(columns={"yhat1": self.pred_col})
 
         prediction = prediction[[self.date_col, self.pred_col]]
