@@ -10,6 +10,10 @@ class Interpolation:
 
 
     def newton_interpolation(self):
+
+
+
+
         return
 
 
