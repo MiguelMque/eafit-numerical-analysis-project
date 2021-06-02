@@ -30,6 +30,7 @@ class Model:
         if self.name == "orbit":
             prediction = self.model.predict(dataset)
         elif self.name == "nprophet":
+
             future = self.model.make_future_dataframe(self.train, periods=len(dataset))
             prediction = self.model.predict(future)
 
