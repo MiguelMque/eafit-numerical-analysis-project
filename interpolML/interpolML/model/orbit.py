@@ -1,5 +1,5 @@
 from interpolML.model import Model
-from orbit.models.dlt import DLTFull
+from orbit.models.lgt import LGTFull
 
 
 class Orbit(Model):
@@ -11,8 +11,9 @@ class Orbit(Model):
 
     @classmethod
     def _build_model(cls):
-        model = DLTFull(
-            response_col='y', date_col='ds',
+        model = LGTFull(
+            response_col="y",
+            date_col="ds",
             seasonality=52,
         )
 
