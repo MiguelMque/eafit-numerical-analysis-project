@@ -1,10 +1,18 @@
-
 from interpolML.model import Model
-class NeuralProphet(Model):
+from neuralprophet import NeuralProphet
+
+
+class NProphet(Model):
     """Constructor class to build a Neural Prophet model.
 
     """
 
-    def __new__(cls, name: str) -> Model:
-        return
+    def __new__(cls, freq:str) -> Model:
+        model = cls._build_model()
+        name = "nprophet"
+        return Model(name=name, model=model, freq=freq)
 
+    @classmethod
+    def _build_model(cls):
+        model = NeuralProphet()
+        return model

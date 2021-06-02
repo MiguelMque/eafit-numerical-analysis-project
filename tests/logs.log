@@ -1,0 +1,5 @@
+2021-06-02 00:05:44,992; WARNING; nprophet; fit; Parts of code may break if using other than daily data.
+2021-06-02 00:05:45,009; INFO; nprophet.utils; set_auto_seasonalities; Disabling weekly seasonality. Run NeuralProphet with weekly_seasonality=True to override this.
+2021-06-02 00:05:45,010; INFO; nprophet.utils; set_auto_seasonalities; Disabling daily seasonality. Run NeuralProphet with daily_seasonality=True to override this.
+2021-06-02 00:05:45,011; INFO; nprophet.config; set_auto_batch_epoch; Auto-set batch_size to 8
+2021-06-02 00:05:45,165; INFO; nprophet; _lr_range_test; learning rate range test found optimal lr: 6.58E-03

@@ -4,14 +4,15 @@ from orbit.models.dlt import DLTFull
 
 class Orbit(Model):
 
-    def __new__(cls) -> Model:
+    def __new__(cls, freq:str) -> Model:
         model = cls._build_model()
-        return model
+        name = "orbit"
+        return Model(name=name, model=model, freq=freq)
 
     @classmethod
     def _build_model(cls):
         model = DLTFull(
-            response_col='Claim', date_col='ds',
+            response_col='y', date_col='ds',
             seasonality=52,
         )
 
