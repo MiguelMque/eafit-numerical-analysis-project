@@ -1,10 +1,6 @@
 # interpolML
 
 - [Installing](#installing)
-- [Developing Locally](#requirements)
-- [Adding Custom comment tags](#adding-custom-comment-tags)
-- [Adding Custom Handlebars Block Helpers](#adding-custom-handlebars-block-helpers)
-- [Partials](#partials)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -14,7 +10,7 @@
 $ cd interpolML
 $ pip install wheel
 $ python setup.py bdist_wheel
-$ pip install dist/interpolML-1.0.0-py3-none-any.wh
+$ pip install dist/interpolML-1.0.0-py3-none-any.whl
 ```
 
 
