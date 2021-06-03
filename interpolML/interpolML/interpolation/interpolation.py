@@ -201,7 +201,6 @@ class Interpolation:
 
                 if self.method == 'lagrange':
                     y = funcion.subs(l, x)
-                    y_interpolate.append(y)
 
                 elif self.method == 'newton':
                     y = self.obj_interpolar.newton_interpolation(datos_interpolar_x, datos_interpolar_y, x)

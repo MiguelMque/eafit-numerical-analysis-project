@@ -20,23 +20,23 @@ class Model:
         "Performs model training with standard settings"
         self.train = deepcopy(train_dataset)
 
-        if self.name == "orbit":
+        if "orbit" in self.name:
 
             self.model.fit(self.train)
 
-        elif self.name == "nprophet":
+        elif "nprophet" in self.name:
             self.model.fit(self.train, validate_each_epoch=True,
                            valid_p=0.2, freq=self.freq,
-                           plot_live_loss=True, epochs=10)
+                           plot_live_loss=True, epochs=100)
 
     def predict(self, dataset: Any):
         "Performs prediction"
 
         self.test = deepcopy(dataset)
 
-        if self.name == "orbit":
+        if "orbit" in self.name:
             prediction = self.model.predict(self.test)
-        elif self.name == "nprophet":
+        elif "nprophet" in self.name:
 
             future = self.model.make_future_dataframe(self.train, periods=len(self.test))
             prediction = self.model.predict(future).rename(columns={"yhat1": self.pred_col})

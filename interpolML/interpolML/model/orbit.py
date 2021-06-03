@@ -4,9 +4,8 @@ from orbit.models.lgt import LGTFull
 
 class Orbit(Model):
 
-    def __new__(cls, freq:str) -> Model:
+    def __new__(cls, name:str,freq:str) -> Model:
         model = cls._build_model()
-        name = "orbit"
         return Model(name=name, model=model, freq=freq)
 
     @classmethod

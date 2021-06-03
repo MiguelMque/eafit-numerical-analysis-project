@@ -39,5 +39,6 @@ class Metrics:
         metrics_str = [x.__name__ for x in metrics]
         self._score_df = pd.DataFrame(metrics_str, columns=['metric_name'])
         self._score_df['metric_values'] = eval_out_list
+        self._score_df['model'] = self.model.name
 
         return self._score_df
