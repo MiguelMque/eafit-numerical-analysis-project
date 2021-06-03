@@ -12,6 +12,7 @@ interpolML/diagnostics/metrics.py
 interpolML/diagnostics/plotter.py
 interpolML/interpolation/__init__.py
 interpolML/interpolation/interpolation.py
+interpolML/interpolation/interpolation_methods.py
 interpolML/model/__init__.py
 interpolML/model/model.py
 interpolML/model/neural_prophet.py
